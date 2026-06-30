@@ -1,0 +1,52 @@
+--------------------------------------------------
+-- 1. Insert 3 books into the table
+--------------------------------------------------
+INSERT INTO books (book_id, title, author, price, stock)
+VALUES
+(1, 'Learn SQL', 'John Smith', 400, 10),
+(2, 'Mastering Python', 'Jane Doe', 600, 5),
+(3, 'HTML & CSS Basics', 'Alan Webb', 300, 8);
+
+--------------------------------------------------
+-- Display all records
+--------------------------------------------------
+SELECT * FROM books;
+
+--------------------------------------------------
+-- 2. Increase the price of 'Learn SQL' by 50
+--    and update its stock to 12
+--------------------------------------------------
+UPDATE books
+SET
+    price = price + 50,
+    stock = 12
+WHERE title = 'Learn SQL';
+
+--------------------------------------------------
+-- Display updated table
+--------------------------------------------------
+SELECT * FROM books;
+
+--------------------------------------------------
+-- 3. Decrease the stock by 2
+--    for books where price is greater than 500
+--------------------------------------------------
+UPDATE books
+SET stock = stock - 2
+WHERE price > 500;
+
+--------------------------------------------------
+-- Display updated table
+--------------------------------------------------
+SELECT * FROM books;
+
+--------------------------------------------------
+-- 4. Delete the book with book_id = 3
+--------------------------------------------------
+DELETE FROM books
+WHERE book_id = 3;
+
+--------------------------------------------------
+-- Display final table
+--------------------------------------------------
+SELECT * FROM books;
